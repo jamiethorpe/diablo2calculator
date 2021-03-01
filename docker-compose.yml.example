@@ -28,6 +28,8 @@ services:
     tty: true
     ports:
       - 3306:3306
+    volumes:
+      - mysql_volume:/var/lib/mysql
     environment:
       MYSQL_DATABASE: MYSQL_DATABASE
       MYSQL_USER: MYSQL_USER
@@ -105,3 +107,6 @@ services:
       - 8025:8025
     networks:
       - laravel
+
+volumes:
+    mysql_volume:
